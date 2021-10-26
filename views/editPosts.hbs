@@ -1,0 +1,13 @@
+<form id="post" name="post" method="POST" action="/posts/edit/{{PostId}}">
+    <div>
+        <label for="title">Title: </label>
+        <input type="text" name="postTitle" value="{{PostTitle}}" required>
+    </div>
+    <div>
+        <label for="body">Body: </label>
+        <input type="text" name="postBody" value="{{PostBody}}" required/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

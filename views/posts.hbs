@@ -1,0 +1,36 @@
+<div>
+    <a class="active" href="/users/profile">Profile</a>
+    <a href="/users/login" class="active">Login</a>
+    <a href="/users/logout" class="active">Logout</a>
+    <a href="http://localhost:3000/posts" class="active">Posts</a>
+    <a href="/users" class="active">Admin</a>
+</div>
+<hr>
+
+<h3>New Post</h3>
+<form id="post" name="post" method="POST" action="/posts">
+    <div>
+        <label for="title">Title: </label>
+        <input type="text" name="postTitle" required>
+    </div>
+    <div>
+        <label for="body">Body: </label>
+        <input type="text" name="postBody" required/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    <hr>
+    <h3>Posts</h3>
+    <div>
+        {{#each posts}}
+        <h4>{{PostTitle}} {{PostBody}}</h4>
+        <a href="/posts/edit/{{PostId}}">Edit</a>
+        <form method="POST" action="/posts/deleted/{{PostId}}">
+            <div>
+                <button type="submit">Delete</button>
+            </div>
+        </form>
+        {{/each}}
+    </div>
+</form>

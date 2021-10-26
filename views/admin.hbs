@@ -1,0 +1,19 @@
+<div>
+    <a class="active" href="/users/profile">Profile</a>
+    <a href="/users/login" class="active">Login</a>
+    <a href="/users/logout" class="active">Logout</a>
+    <a href="http://localhost:3000/posts" class="active">Posts</a>
+    <a href="/users" class="active">Admin</a>
+</div>
+<hr>
+
+<h2>Users:</h2>
+{{#each users}}
+<h3>{{FirstName}} {{LastName}} {{UserId}}</h3>
+<a href="/users/profile/{{UserId}}">View User</a>
+<form method="POST" action="/users/deleted/{{UserId}}">
+    <div>
+        <button type="submit">Delete</button>
+    </div>
+</form>
+{{/each}}
